@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/static/js/jquery-1.10.2.min.js"></script>
+{% load bootstrap3 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+</head>
+<body>
+
+{% if error %}
+  <span style="color: #f00;">{{ message }}</span><br>
+{% endif %}
+
+{% block bootstrap3_content %}
+<div class="row" style="padding-top:20px">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default ">
+      <div class="panel-heading">
+        <h3 class="panel-title">URLito</h3>
+      </div>
+      <div class="panel-body">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

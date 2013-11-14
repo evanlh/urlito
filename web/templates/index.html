@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form action="" method="POST" class="form">
+  {% csrf_token %}
+  <div class="form-group {{ extraclass }}">
+    <label class="control-label" for="url">{{ error }}</label>
+    <input type="text" name="url" size="60" placeholder="Paste URL here" class="input-sm" />
+  <button type="submit" class="btn btn-primary">Shorten!</button>
+  </div>
+</form>
+
+<br>
+URLito takes your URL and makes it cute and little.
+
+{% endblock %}
